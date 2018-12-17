@@ -8,7 +8,7 @@ def load_CIFAR_batch(filename):
   with open(filename, 'rb') as f:
     datadict = pickle.load(f, encoding='bytes')
     X = datadict[b'data']
-    Y = datadict[b'labels']...
+    Y = datadict[b'labels']
     X = X.reshape(10000, 3, 32, 32).transpose(0,2,3,1).astype("float")
     Y = np.array(Y)
     return X, Y
